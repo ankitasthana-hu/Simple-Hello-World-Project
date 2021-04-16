@@ -14,4 +14,8 @@ pipeline {
     }
 
   }
+  environment {
+    maven = 'M2_HOME'
+    JDK = 'JAVA_HOME'
+  }
 }
