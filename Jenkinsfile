@@ -1,5 +1,11 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven'
+      args 'M2_HOME'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
@@ -13,9 +19,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    maven = 'M2_HOME'
-    JDK = 'JAVA_HOME'
   }
 }
